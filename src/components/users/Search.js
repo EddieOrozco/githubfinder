@@ -4,22 +4,16 @@ import PropTypes from 'prop-types'
 const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
   const [text, setText] = useState('')
 
-
-  // Events
   const onSubmit = (e) => {
     e.preventDefault()
     if (text === ''){
       setAlert(' Please enter something', 'light')
     } else {
-    // console.log(this.state.text)
-    // searchUsers is a Function coming from the App.js file 
     searchUsers(text)
-    // clear the form
     setText('')
     }
   }
 
-  // onChange event will update all input's by the name of input bc of the [e.target.name] 
   const onChange= (e) => {
     setText(e.target.value)
   }
@@ -34,7 +28,6 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
         
       </div>
     )
-  
 }
 
 Search.propTypes= {
@@ -44,5 +37,5 @@ Search.propTypes= {
   setAlert: PropTypes.func.isRequired
 }
 
-export default Search
+export default Search;
 
